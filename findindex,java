@@ -1,0 +1,14 @@
+12.Search element a find a index
+       int nums[] = {2, -4, 4, 0, 10};
+       int target;
+       System.out.println("enter a value of target=");
+      target=sc.nextInt();
+        int ind =-1;
+        for(int i=0;i<nums.length;i++){
+            if(nums[i]==target){
+                ind=i;
+                break;
+            }
+        }
+        System.out.println("index of element ="+ind);
+
