@@ -1,0 +1,34 @@
+class Stack {
+    private int[] arr;
+    private int top;
+    private int capacity;
+
+    // Constructor
+    Stack(int size) {
+        capacity = size;
+        arr = new int[size];
+        top = -1;
+    }
+
+    // Push operation
+    public void push(int x) {
+        if (top == capacity - 1) {
+            System.out.println("Stack Overflow");
+            return;
+        }
+        arr[++top] = x;
+        System.out.println(x + " pushed");
+    }
+
+    // Pop operation
+    public int pop() {
+        if (top == -1) {
+            System.out.println("Stack Underflow");
+            return -1;
+        }
+        return arr[top--];
+    }
+
+    // Peek operation
+    public int peek() {
+        if
