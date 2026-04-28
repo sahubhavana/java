@@ -1,0 +1,57 @@
+// Interface (Abstraction)
+interface Transaction {
+    void deposit(double amount);
+    void withdraw(double amount);
+}
+
+// Abstract class
+abstract class Account implements Transaction {
+    private String accountHolder;
+    protected double balance;
+
+    Account(String name, double balance) {
+        this.accountHolder = name;
+        this.balance = balance;
+    }
+
+    // Concrete method
+    public void showDetails() {
+        System.out.println("Account Holder: " + accountHolder);
+        System.out.println("Balance: " + balance);
+    }
+
+    // Abstract method
+    abstract void calculateInterest();
+}
+
+// Savings Account (Inheritance + Polymorphism)
+class SavingsAccount extends Account {
+
+    SavingsAccount(String name, double balance) {
+        super(name, balance);
+    }
+
+    @Override
+    public void deposit(double amount) {
+        balance += amount;
+        System.out.println("Deposited: " + amount);
+    }
+
+    @Override
+    public void withdraw(double amount) {
+        if (balance >= amount) {
+            balance -= amount;
+            System.out.println("Withdrawn: " + amount);
+        } else {
+            System.out.println("Insufficient Balance");
+        }
+    }
+
+    @Override
+    void calculateInterest() {
+        double interest = balance * 0.05;
+        System.out.println("Interest: " + interest);
+    }
+}
+
+// Current
