@@ -1,0 +1,35 @@
+ 3.Implementation  of queue with the help of stack
+//    Stack<Integer> st=new Stack<>();
+//    Stack<Integer> s1=new Stack<>();
+//    public  void offer(int x){
+//
+//            while(st.isEmpty()!=true){
+//                s1.push(st.pop());
+//            }
+//            st.push(x);
+//
+//        while(s1.isEmpty()!=true){
+//            st.push(s1.pop());
+//        }
+//    }
+//    public  void poll(){
+//        if(st.isEmpty()==true){
+//            System.out.print("queue is empty");
+//            return;
+//        }
+//        else{
+//
+//            System.out.println(st.pop());
+//        }
+//
+//    }
+//    public void peek(){
+//        if(st.isEmpty()){
+//            System.out.print("queue is empty");
+//        }
+//        else{
+//            System.out.print("Peek element ="+st.peek());
+//        }
+//    }
+//
+//}
