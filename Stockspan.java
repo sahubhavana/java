@@ -1,0 +1,34 @@
+import java.util.*;
+
+public class Main {
+
+    public static int[] stockSpan(int[] price) {
+
+        Stack<Integer> st = new Stack<>();
+        int[] span = new int[price.length];
+
+        for (int i = 0; i < price.length; i++) {
+
+            while (!st.isEmpty() && price[st.peek()] <= price[i]) {
+                st.pop();
+            }
+
+            if (st.isEmpty()) {
+                span[i] = i + 1;
+            } else {
+                span[i] = i - st.peek();
+            }
+
+            st.push(i);
+        }
+
+        return span;
+    }
+
+    public static void main(String[] args) {
+
+        int[] price = {100, 80, 60, 70, 60, 75, 85};
+
+        System.out.println(Arrays.toString(stockSpan(price)));
+    }
+}
